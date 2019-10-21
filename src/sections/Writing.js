@@ -50,7 +50,7 @@ const EllipsisHeading = styled(Heading)`
   display: -webkit-inline-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  border-bottom: ${props => props.theme.colors.primary} 5px solid;
+  // border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
 const Post = ({ title, text, image, url, date, time }) => (
@@ -106,9 +106,6 @@ const MorePosts = ({ username, name, number }) => (
       <Box>
         <EllipsisHeading fontSize={5} my={2}>
           Hooray! &nbsp;
-          <span role="img" aria-label="party">
-            🎉
-          </span>
         </EllipsisHeading>
         <Heading lineHeight={1.5}>
           It seems that
@@ -183,7 +180,7 @@ const Writing = () => (
       return (
         isMediumUserDefined && (
           <Section.Container id="writing" Background={Background}>
-            <Section.Header name="Writing" icon="✍️" label="writing" />
+            <Section.Header name="Writing" label="writing" />
             <CardContainer minWidth="300px">
               {posts.map(({ Component, ...rest }) => (
                 <Fade bottom key={rest.id}>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box } from 'rebass';
 import PropTypes from 'prop-types';
-import LinkAnimated from './LinkAnimated';
+import HeaderLinks from './HeaderLinks';
 
 const RouteLink = ({ onClick, selected, name }) => (
   <Box ml={[2, 3]} color="background" fontSize={[2, 3]}>
-    <LinkAnimated onClick={onClick} selected={selected}>
+    <HeaderLinks onClick={onClick} selected={selected}>
       {name}
-    </LinkAnimated>
+    </HeaderLinks>
   </Box>
 );
 

@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
-const LinkAnimated = styled.span`
+const HeaderLinks = styled.span`
   text-decoration: none;
   position: relative;
-  font-size: 35px; 
+  font-size: 25px; 
   margin-bottom: 0;
   padding-bottom: 5px;
   color: inherit;
   ${props =>
-    props.selected};
+    props.selected &&
+    `border-bottom:  5px solid ${props.theme.colors.background}`};
   transition: 0.4s;
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 
@@ -32,4 +33,4 @@ const LinkAnimated = styled.span`
   }
 `;
 
-export default LinkAnimated;
+export default HeaderLinks;

@@ -12,7 +12,7 @@ const IconLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: ${props => props.theme.colors.primaryLight};
+    color: ${props => props.theme.colors.primary};
   }
 `;
 

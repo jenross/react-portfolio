@@ -9,7 +9,7 @@ import { CardContainer, Card } from '../components/Card';
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
-import Hide from '../components/Hide';
+// import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -49,17 +49,18 @@ const CARD_HEIGHT = '200px';
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
 const Title = styled(Text)`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${props => props.theme.colors.primary} 5px solid;
+  // border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
+  font-size: 15px; 
   width: 100%;
   width: calc(100% - ${CARD_HEIGHT});
 
@@ -109,7 +110,6 @@ const Project = ({
   projectUrl,
   repositoryUrl,
   type,
-  publishedDate,
   logo,
 }) => (
   <Card p={0}>
@@ -151,9 +151,6 @@ const Project = ({
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
           </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
         </ProjectTag>
       </ImageContainer>
     </Flex>
@@ -166,7 +163,6 @@ Project.propTypes = {
   projectUrl: PropTypes.string.isRequired,
   repositoryUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -177,7 +173,7 @@ Project.propTypes = {
 
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" label="notebook" />
+    <Section.Header name="Projects" label="notebook" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
@@ -188,7 +184,6 @@ const Projects = () => (
               description
               projectUrl
               repositoryUrl
-              publishedDate(formatString: "YYYY")
               type
               logo {
                 title
