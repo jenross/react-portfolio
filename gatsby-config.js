@@ -21,10 +21,7 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: 'gatsby-plugin-manifest',
-    options: manifestConfig,
-  },
+
   'gatsby-plugin-styled-components',
   {
     resolve: 'gatsby-source-contentful',
@@ -34,7 +31,6 @@ const plugins = [
     },
   },
   'gatsby-transformer-remark',
-  'gatsby-plugin-offline',
 ];
 
 module.exports = client.getEntries().then(entries => {
